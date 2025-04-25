@@ -16,7 +16,7 @@ public class RecruitmentSystem  implements ActionListener
     private JLabel vacancyNumberLBL;
     private JTextField TFvacancyNumberTXT;
     
-    private JLabel staffNameLBL;
+    private JLabel StaffNameLBL;
     private JTextField TFstaffNameTXT;
     
     private JLabel jobTypeLBL;
@@ -67,6 +67,27 @@ public class RecruitmentSystem  implements ActionListener
      gbc.gridx =1;
      gbc.gridy = 0;
      contentPane.add(TFvacancyNumberTXT, gbc);
+     
+     
+     
+          StaffNameLBL = new JLabel("name");
+     gbc.gridx = 0;
+     gbc.gridy = 5; 
+     
+     contentPane.add(StaffNameLBL,gbc);
+     
+     TFstaffNameTXT = new JTextField(15);
+     gbc.gridx =1;
+     gbc.gridy = 5;
+     contentPane.add(TFstaffNameTXT, gbc);
+     
+     
+     
+     
+     
+     
+     
+     
      
      
      frame.pack(); 

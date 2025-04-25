@@ -16,7 +16,7 @@ public class FullTimeStaffHire extends StaffHire
     public FullTimeStaffHire()
     {
         // initialise instance variables
-        x = 0;
+        System.out.print("piss");
     }
 
     /**
