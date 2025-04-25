@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class StaffHire
+public class StaffHire extends data_transfer
 {
     // instance variables - replace the example below with your own
     private int VacancyNumber;

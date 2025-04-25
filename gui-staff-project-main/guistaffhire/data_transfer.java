@@ -1,22 +1,27 @@
 
 /**
- * Write a description of class GUI here.
+ * Write a description of class data_transfer here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class GUI
+
+import java.util.Scanner;
+
+public class data_transfer extends RecruitmentSystem 
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class GUI
+     * Constructor for objects of class data_transfer
      */
-    public GUI()
+    public static void  main (String[] args)
     {
-        // initialise instance variables
-        x = 0;
+        Scanner input = new Scanner(System.in);
+        System.out.println("hi");
+        String name = input.nextLine();
+        System.out.println("hi"+name);
     }
 
     /**

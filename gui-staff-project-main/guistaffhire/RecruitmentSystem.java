@@ -50,14 +50,14 @@ public class RecruitmentSystem  implements ActionListener
     {
         
      //the design of the gui will be here 
-     JFrame frame = new JFrame("stuff for now");
+     JFrame frame = new JFrame("recruitment system");
      Container contentPane = frame.getContentPane();
      contentPane.setLayout(new GridBagLayout());
      GridBagConstraints gbc = new GridBagConstraints();
      gbc.insets = new Insets (5, 5, 5, 5);//for padding
      
      
-     vacancyNumberLBL = new JLabel("vacany");
+     vacancyNumberLBL = new JLabel("vacancy");
      gbc.gridx = 0;
      gbc.gridy = 0; 
      
