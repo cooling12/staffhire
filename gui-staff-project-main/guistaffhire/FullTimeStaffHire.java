@@ -8,26 +8,42 @@
 public class FullTimeStaffHire extends StaffHire
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int WeeklyFractionalHours;
+    private double salary;
 
     /**
      * Constructor for objects of class FullTimeStaffHire
      */
-    public FullTimeStaffHire()
+    public FullTimeStaffHire(
+    double NewSalary,
+    int NewWeeklyFractionalHours,
+    int VacancyNumber,
+    String Designation,
+    String StaffName,
+    String JobType,
+    String JoiningDate,
+    String Qualification,
+    String AppointedBy,
+    boolean Joined
+    
+    )
     {
         // initialise instance variables
-        System.out.print("piss");
+        super(
+        VacancyNumber,
+        Designation,
+         StaffName,
+         JobType,
+         JoiningDate,
+         Qualification,
+        AppointedBy,
+        Joined);
+        
+        NewSalary = salary;
+        NewWeeklyFractionalHours =WeeklyFractionalHours;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void setShifts(){
+        System.out.println("guhasshahahah");
+    
     }
 }

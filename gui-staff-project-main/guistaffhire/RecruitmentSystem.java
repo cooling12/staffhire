@@ -50,14 +50,16 @@ public class RecruitmentSystem  implements ActionListener
     {
         
      //the design of the gui will be here 
-     JFrame frame = new JFrame("recruitment system");
-     Container contentPane = frame.getContentPane();
+     JFrame site = new JFrame("recruitment system");
+     Container contentPane = site.getContentPane();
      contentPane.setLayout(new GridBagLayout());
      GridBagConstraints gbc = new GridBagConstraints();
-     gbc.insets = new Insets (5, 5, 5, 5);//for padding
+     gbc.insets = new Insets (0, 10, 10, 10);//for padding
      
      
      vacancyNumberLBL = new JLabel("vacancy");
+
+     
      gbc.gridx = 0;
      gbc.gridy = 0; 
      
@@ -70,15 +72,15 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
-          StaffNameLBL = new JLabel("name");
+     StaffNameLBL = new JLabel("name");
      gbc.gridx = 0;
-     gbc.gridy = 5; 
+     gbc.gridy = 2; 
      
      contentPane.add(StaffNameLBL,gbc);
      
      TFstaffNameTXT = new JTextField(15);
      gbc.gridx =1;
-     gbc.gridy = 5;
+     gbc.gridy =2;
      contentPane.add(TFstaffNameTXT, gbc);
      
      
@@ -90,11 +92,27 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
-     frame.pack(); 
-     frame.setVisible(true);
+     site.pack(); 
+     site.setLayout(null);
+     site.setSize(400,300);
+     site.setVisible(true);
     }
     public static void main(String[]args){
         RecruitmentSystem recruitmentSystem = new RecruitmentSystem();
+        System.out.println("wooo were in main baby");
+        FullTimeStaffHire poo = new FullTimeStaffHire(
+        1,
+        2,
+        3,
+        "burger",
+        "burger",
+        "burger",
+        "burger",
+        "burger",
+        "burger",
+        true
+        );
+        poo.setShifts();
     }
     
     /**
