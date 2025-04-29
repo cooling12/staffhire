@@ -57,7 +57,7 @@ public class RecruitmentSystem  implements ActionListener
     private JTextField TFshiftsTXT;
     
     private JLabel termintedLBL;
-    private JCheckBox JoinedTXT;
+    private JCheckBox terminatedTXT;
     
     
     
@@ -68,6 +68,10 @@ public class RecruitmentSystem  implements ActionListener
     private JButton partTimeBUT;
     private JButton displayBUT;
     private JButton clearBUT;
+    private JButton setSalaryBUT;
+    private JButton setWorkingShiftsBUT;
+    private JButton terminateBUT;
+    
 
     /**
      * Constructor for objects of class GUI
@@ -86,15 +90,16 @@ public class RecruitmentSystem  implements ActionListener
      Container contentPane = site.getContentPane();
      contentPane.setLayout(new GridBagLayout());
      JPanel employmentPanel = new JPanel();
-     employmentPanel.setBackground(new Color(28, 26, 26));
-     employmentPanel.setPreferredSize(new Dimension(400,280));
+     employmentPanel.setBackground(new Color(76, 87, 92));
+     employmentPanel.setPreferredSize(new Dimension(700,600));
      GridBagConstraints gbc = new GridBagConstraints();
-     gbc.insets = new Insets (2, 2, 2, 0);//for padding
+     gbc.insets = new Insets (5, 5, 5, 5);//for padding
      
      
      
      //lables and textfields go here 
      vacancyNumberLBL = new JLabel("vacancy");
+     vacancyNumberLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 0; 
      contentPane.add(vacancyNumberLBL,gbc);
@@ -108,6 +113,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      StaffNameLBL = new JLabel("name");
+     StaffNameLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 2; 
      
@@ -122,6 +128,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      jobTypeLBL = new JLabel("job type");
+     jobTypeLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 3;
      contentPane.add(jobTypeLBL,gbc);
@@ -135,6 +142,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      qualificationLBL = new JLabel("qualification");
+     qualificationLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 4;
      contentPane.add(qualificationLBL,gbc);
@@ -148,6 +156,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      joiningDateLBL = new JLabel("Join date");
+     joiningDateLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 5;
      contentPane.add(joiningDateLBL,gbc);
@@ -162,6 +171,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      designationLBL= new JLabel("designation");
+     designationLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 6;
      contentPane.add(designationLBL,gbc);
@@ -175,6 +185,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      appointedByLBL = new JLabel("appointed by");
+     appointedByLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 7;
      contentPane.add(appointedByLBL,gbc);
@@ -194,20 +205,26 @@ public class RecruitmentSystem  implements ActionListener
      joinedTXT = new JCheckBox();
      joinedTXT.setText("joined");
      joinedTXT.setHorizontalTextPosition(SwingConstants.LEFT);
-     gbc.gridx = 0;
+     gbc.gridx = 1;
      gbc.gridy = 8;
      site.add(joinedTXT,gbc);
      
 
+     
+     /**
+     * this section handles the fulltime staff section of the ui 
+     */
     
      JLabel fullTimeHeaderLBL = new JLabel("fulltime staff");
+     fullTimeHeaderLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 1;
      gbc.gridy = 9;
      site.add(fullTimeHeaderLBL,gbc);
      
      
      WeeklyFractionalHoursLBL = new JLabel("Weekly Fractional Hours");
-     gbc.gridx =0;
+     WeeklyFractionalHoursLBL.setForeground(new Color(255,255,255));
+     gbc.gridx = 0;
      gbc.gridy = 11;
      site.add(WeeklyFractionalHoursLBL,gbc);
      
@@ -220,7 +237,8 @@ public class RecruitmentSystem  implements ActionListener
      
      
      salaryLBL = new JLabel("salary");
-     gbc.gridx =0;
+     salaryLBL.setForeground(new Color(255,255,255));
+     gbc.gridx = 0;
      gbc.gridy = 12;
      site.add(salaryLBL,gbc);
      
@@ -230,30 +248,38 @@ public class RecruitmentSystem  implements ActionListener
      site.add(TFsalaryTXT,gbc);
      
      
+        
+     
+     setSalaryBUT = new JButton("set salary");
+     gbc.gridx = 1;
+     gbc.gridy = 13;
+     //submitBUT.addActionListener(this);
+     site.add(setSalaryBUT,gbc);
+     
+          
+     
+     fullTimeBUT = new JButton("add fulltime staff");
+     gbc.gridx = 1;
+     gbc.gridy = 14;
+     //submitBUT.addActionListener(this);
+     site.add(fullTimeBUT,gbc);
      
      
+     
+     
+     /**
+     * this section handles the part time staff section of the ui 
+     */
      
      
      JLabel partTimeHeaderLBL = new JLabel(" part-time staff");
+     partTimeHeaderLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 1;
-     gbc.gridy = 14;
+     gbc.gridy = 15;
      site.add(partTimeHeaderLBL,gbc);
      
      workingHourLBL = new JLabel("working hour");
-     gbc.gridx = 0;
-     gbc.gridy = 15;
-     site.add(workingHourLBL,gbc);
-     
-     TFworkingHourTXT = new JTextField(10);
-     gbc.gridx = 1;
-     gbc.gridy = 15;
-     site.add(TFworkingHourTXT,gbc);
-     
-     
-     
-     
-     
-     workingHourLBL = new JLabel("working hour");
+     workingHourLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
      gbc.gridy = 16;
      site.add(workingHourLBL,gbc);
@@ -267,30 +293,88 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
+     wagesPerHourLBL = new JLabel("wages per hour");
+     wagesPerHourLBL.setForeground(new Color(255,255,255));
+     gbc.gridx = 0;
+     gbc.gridy = 17;
+     site.add(wagesPerHourLBL,gbc);
      
-     //buttons are located here 
-     
-     fullTimeBUT = new JButton("add fulltime staff");
-     gbc.gridx = 12;
-     gbc.gridy = 3;
-     //submitBUT.addActionListener(this);
-     site.add(fullTimeBUT,gbc);
+     TFwagesPerHourTXT = new JTextField(10);
+     gbc.gridx = 1;
+     gbc.gridy = 17;
+     site.add(TFwagesPerHourTXT,gbc);
      
      
-     fullTimeBUT = new JButton("add fulltime staff");
-     gbc.gridx = 13;
-     gbc.gridy = 4;
-     //submitBUT.addActionListener(this);
-     site.add(fullTimeBUT,gbc);
+     
+     
+     shiftsLBL = new JLabel("shifts");
+     shiftsLBL.setForeground(new Color(255,255,255));
+     gbc.gridx = 0;
+     gbc.gridy = 18;
+     site.add(shiftsLBL,gbc);
+     
+     TFshiftsTXT = new JTextField(10);
+     gbc.gridx = 1;
+     gbc.gridy = 18;
+     site.add(TFshiftsTXT,gbc);
+     
+     
+     
+     terminatedTXT = new JCheckBox();
+     terminatedTXT.setText("terminated");
+     terminatedTXT.setHorizontalTextPosition(SwingConstants.LEFT);
+     gbc.gridx = 1;
+     gbc.gridy = 19;
+     site.add(terminatedTXT,gbc);
+     
      
      
      partTimeBUT = new JButton("add parttime staff");
-     gbc.gridx = 12;
-     gbc.gridy = 5;
+     gbc.gridx = 1;
+     gbc.gridy = 20;
      //submitBUT.addActionListener(this);
      site.add(partTimeBUT,gbc);
      
      
+     partTimeBUT = new JButton("add parttime staff");
+     gbc.gridx = 1;
+     gbc.gridy = 20;
+     //submitBUT.addActionListener(this);
+     
+     
+     
+     site.add(partTimeBUT,gbc);
+     setWorkingShiftsBUT = new JButton("set working shift");
+     gbc.gridx = 1;
+     gbc.gridy = 21;
+     //submitBUT.addActionListener(this);
+     site.add(setWorkingShiftsBUT,gbc);
+     
+     
+     
+
+     terminateBUT = new JButton("terminate");
+     gbc.gridx = 1;
+     gbc.gridy = 22;
+     //submitBUT.addActionListener(this);
+     site.add(terminateBUT,gbc);
+     
+     
+     
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     /**
+     * this section handles admin buttons 
+     */
      displayBUT = new JButton("display number");
      gbc.gridx = 12;
      gbc.gridy = 2;
@@ -300,8 +384,8 @@ public class RecruitmentSystem  implements ActionListener
      
      clearBUT = new JButton("clear");
      gbc.gridx = 12;
-     gbc.gridy = 5;
-     //submitBUT.addActionListener(this);
+     gbc.gridy = 3;
+     clearBUT.addActionListener(this);
      site.add(clearBUT,gbc);
      
      
@@ -313,7 +397,7 @@ public class RecruitmentSystem  implements ActionListener
      
      site.setLayout(new BorderLayout());
      site.add(employmentPanel,BorderLayout.WEST);
-     site.setSize(500,500);
+     site.setSize(600,710);
      site.setVisible(true);
     }
     public static void main(String[]args){
@@ -342,7 +426,7 @@ public class RecruitmentSystem  implements ActionListener
         if(event.getSource()==submitBUT){
             System.out.println(TFstaffNameTXT.getText());
         }
-        
+        // for the clear button use this ".setText("")"
     }
 
 
