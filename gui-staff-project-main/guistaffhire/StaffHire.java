@@ -63,8 +63,8 @@ public class StaffHire
     public String GetJoiningDate(){
         return JoiningDate;
     }
-    public void SetStaffName(){
-        
+    public void SetStaffName(String StaffName){
+        this.StaffName = StaffName;
     }
     public String GetStaffName(){
     

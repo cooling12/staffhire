@@ -8,6 +8,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 
 public class RecruitmentSystem  implements ActionListener
@@ -71,6 +72,13 @@ public class RecruitmentSystem  implements ActionListener
     private JButton setSalaryBUT;
     private JButton setWorkingShiftsBUT;
     private JButton terminateBUT;
+    
+    //additional attributes 
+    static String stringify;
+    static int intifiy;
+    public boolean submit;
+    
+    public ArrayList<StaffHire> stafflist = new ArrayList();
     
 
     /**
@@ -261,7 +269,7 @@ public class RecruitmentSystem  implements ActionListener
      fullTimeBUT = new JButton("add fulltime staff");
      gbc.gridx = 1;
      gbc.gridy = 14;
-     //submitBUT.addActionListener(this);
+     fullTimeBUT.addActionListener(this);
      site.add(fullTimeBUT,gbc);
      
      
@@ -335,11 +343,7 @@ public class RecruitmentSystem  implements ActionListener
      //submitBUT.addActionListener(this);
      site.add(partTimeBUT,gbc);
      
-     
-     partTimeBUT = new JButton("add parttime staff");
-     gbc.gridx = 1;
-     gbc.gridy = 20;
-     //submitBUT.addActionListener(this);
+
      
      
      
@@ -403,30 +407,53 @@ public class RecruitmentSystem  implements ActionListener
     public static void main(String[]args){
         RecruitmentSystem recruitmentSystem = new RecruitmentSystem();
         System.out.println("wooo were in main baby");
-        FullTimeStaffHire poo = new FullTimeStaffHire(
-        1,
-        2,
-        3,
-        "burger",
-        "burger",
-        "burger",
-        "burger",
-        "burger",
-        "burger",
-        true
-        );
-        poo.setShifts();
-    }
+
+        
+        
+        }
+    
     
     /**
      * find which button triggered the event and call the appropiate method
      */
 
     public void actionPerformed(ActionEvent event){
-        if(event.getSource()==submitBUT){
-            System.out.println(TFstaffNameTXT.getText());
+        if(event.getSource()==clearBUT){
+            TFvacancyNumberTXT.setText("");
+            TFstaffNameTXT.setText("");
+            TFJobTypeTXT.setText("");
+            qualificationTXT.setText("");
+            TFjoiningDateTXT.setText("");
+            TFdesignationTXT.setText("");
+            TFappointedByTXT.setText("");
+            TFsalaryTXT.setText("");
+            TFWeeklyFractionalHoursTXT.setText("");
+            TFworkingHourTXT.setText("");
+            TFwagesPerHourTXT.setText("");
+            TFshiftsTXT.setText("");
+            terminatedTXT.setSelected(false);
+            joinedTXT.setSelected(false);
         }
-        // for the clear button use this ".setText("")"
+         if (event.getSource() == fullTimeBUT){
+             FullTimeStaffHire   test = new FullTimeStaffHire(
+            1,"stupid",
+            TFvacancyNumberTXT.getText(),
+            "burger",
+            "burger",
+            "burger",
+            "burger",
+            true,
+            1.0,
+            3
+            );   
+            System.out.println(test.GetStaffName());
+            stafflist.add(test);
+            for(int i = 0; i<stafflist.size(); i++){
+                System.out.println(stafflist.get(i).toString());
+            }
+            }
+                  
+        
     }
 
 

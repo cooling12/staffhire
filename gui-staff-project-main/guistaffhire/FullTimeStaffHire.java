@@ -15,8 +15,6 @@ public class FullTimeStaffHire extends StaffHire
      * Constructor for objects of class FullTimeStaffHire
      */
     public FullTimeStaffHire(
-    double NewSalary,
-    int NewWeeklyFractionalHours,
     int VacancyNumber,
     String Designation,
     String StaffName,
@@ -24,8 +22,9 @@ public class FullTimeStaffHire extends StaffHire
     String JoiningDate,
     String Qualification,
     String AppointedBy,
-    boolean Joined
-    
+    boolean Joined,
+    double NewSalary,
+    int NewWeeklyFractionalHours
     )
     {
         // initialise instance variables
