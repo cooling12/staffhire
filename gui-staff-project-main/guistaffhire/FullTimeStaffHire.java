@@ -16,11 +16,11 @@ public class FullTimeStaffHire extends StaffHire
      */
     public FullTimeStaffHire(
     int VacancyNumber,
-    String Designation,
     String StaffName,
     String JobType,
-    String JoiningDate,
     String Qualification,
+    String JoiningDate,
+    String Designation,
     String AppointedBy,
     boolean Joined,
     double NewSalary,

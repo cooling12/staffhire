@@ -20,11 +20,11 @@ public class PartTimeStaffHire extends StaffHire
      */
     public PartTimeStaffHire(
     int VacancyNumber,
-    String Designation,
     String StaffName,
     String JobType,
-    String JoiningDate,
     String Qualification,
+    String JoiningDate,
+    String Designation,
     String AppointedBy,
     boolean Joined,
     int newWorkingHour,

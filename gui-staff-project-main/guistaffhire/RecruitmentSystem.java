@@ -74,9 +74,13 @@ public class RecruitmentSystem  implements ActionListener
     private JButton terminateBUT;
     
     //additional attributes 
-    static String stringify;
-    static int intifiy;
-    public boolean submit;
+    public int intifyVancany;
+    public double doubleifySalary;
+    public int intifyWeeklyFractionalHours;
+    public int initifyWorkingHour;
+    public double doubleifyWagesPerHour; 
+    
+    
     
     public ArrayList<StaffHire> stafflist = new ArrayList();
     
@@ -434,25 +438,32 @@ public class RecruitmentSystem  implements ActionListener
             terminatedTXT.setSelected(false);
             joinedTXT.setSelected(false);
         }
-         if (event.getSource() == fullTimeBUT){
+        else if (event.getSource() == fullTimeBUT){
+             intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
+             
              FullTimeStaffHire   test = new FullTimeStaffHire(
-            1,"stupid",
-            TFvacancyNumberTXT.getText(),
-            "burger",
-            "burger",
-            "burger",
-            "burger",
-            true,
+            
+            intifyVancany,
+            TFstaffNameTXT.getText(),
+            TFJobTypeTXT.getText(),
+            qualificationTXT.getText(),
+            TFjoiningDateTXT.getText(),
+            TFdesignationTXT.getText(),
+            TFappointedByTXT.getText(),
+            joinedTXT.isSelected(),
             1.0,
             3
             );   
             System.out.println(test.GetStaffName());
+            System.out.println(test.Getdesignation());
+            
             stafflist.add(test);
             for(int i = 0; i<stafflist.size(); i++){
                 System.out.println(stafflist.get(i).toString());
             }
-            }
-                  
+        }
+            
+           
         
     }
 
