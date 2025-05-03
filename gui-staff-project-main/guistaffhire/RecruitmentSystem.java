@@ -355,7 +355,7 @@ public class RecruitmentSystem  implements ActionListener
      setWorkingShiftsBUT = new JButton("set working shift");
      gbc.gridx = 1;
      gbc.gridy = 21;
-     //submitBUT.addActionListener(this);
+     partTimeBUT.addActionListener(this);
      site.add(setWorkingShiftsBUT,gbc);
      
      
@@ -440,8 +440,10 @@ public class RecruitmentSystem  implements ActionListener
         }
         else if (event.getSource() == fullTimeBUT){
              intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
+             doubleifySalary = Double.parseDouble(TFsalaryTXT.getText());
+             intifyWeeklyFractionalHours = Integer.parseInt(TFWeeklyFractionalHoursTXT.getText());
              
-             FullTimeStaffHire   test = new FullTimeStaffHire(
+             FullTimeStaffHire   full = new FullTimeStaffHire(
             
             intifyVancany,
             TFstaffNameTXT.getText(),
@@ -451,16 +453,48 @@ public class RecruitmentSystem  implements ActionListener
             TFdesignationTXT.getText(),
             TFappointedByTXT.getText(),
             joinedTXT.isSelected(),
-            1.0,
-            3
+            doubleifySalary,
+            intifyWeeklyFractionalHours
             );   
-            System.out.println(test.GetStaffName());
-            System.out.println(test.Getdesignation());
+            System.out.println(full.GetStaffName());
+            System.out.println(full.Getdesignation());
+            System.out.println("burgers and fries");
             
-            stafflist.add(test);
+            stafflist.add(full);
             for(int i = 0; i<stafflist.size(); i++){
                 System.out.println(stafflist.get(i).toString());
             }
+        }
+        
+        else if (event.getSource() == partTimeBUT){
+            System.out.println("burgers and fries");
+             intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
+             initifyWorkingHour = Integer.parseInt(TFworkingHourTXT.getText());
+             doubleifyWagesPerHour = Double.parseDouble(TFwagesPerHourTXT.getText());
+             PartTimeStaffHire   part = new PartTimeStaffHire(
+
+            intifyVancany,
+            TFstaffNameTXT.getText(),
+            TFJobTypeTXT.getText(),
+            qualificationTXT.getText(),
+            TFjoiningDateTXT.getText(),
+            TFdesignationTXT.getText(),
+            TFappointedByTXT.getText(),
+            joinedTXT.isSelected(),
+            initifyWorkingHour,
+            doubleifyWagesPerHour,
+            TFshiftsTXT.getText(),
+            terminatedTXT.isSelected()
+            );
+            System.out.println(part.GetStaffName());
+            System.out.println(terminatedTXT.isSelected());
+
+            stafflist.add(part);
+            for(int i = 0; i<stafflist.size(); i++){
+                System.out.println(stafflist.get(i).toString());
+            }
+             
+           
         }
             
            
