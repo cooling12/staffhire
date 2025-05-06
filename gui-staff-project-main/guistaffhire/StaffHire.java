@@ -8,6 +8,7 @@
 public class StaffHire
 {
     // instance variables - replace the example below with your own
+<<<<<<< Updated upstream
     private int VacancyNumber;
     private String Designation;
     private String StaffName;
@@ -16,6 +17,17 @@ public class StaffHire
     private String Qualification;
     private String AppointedBy;
     private boolean Joined;
+=======
+    
+    protected int VacancyNumber;
+    protected String Designation;
+    protected String StaffName;
+    protected String JobType;
+    protected String JoiningDate;
+    protected String Qualification;
+    protected String AppointedBy;
+    protected boolean Joined;
+>>>>>>> Stashed changes
 
     /**
      * Constructor for objects of class StaffHire
@@ -54,7 +66,7 @@ public class StaffHire
     public void Setjoined(){
         
     }
-    public boolean Getjoined(){
+    public boolean GetJoined(){
         return Joined;
     }
     public void SetJoiningDate(){
@@ -99,6 +111,27 @@ public class StaffHire
         return AppointedBy;
     }
     
+<<<<<<< Updated upstream
+=======
+    public void display(
+     int newVacancyNumber,
+     String newDesignation,
+     String newStaffName,
+     String newJobType,
+     String newJoiningDate,
+     String newQualification,
+     String newAppointedBy,
+     boolean newJoined)
+    {
+         System.out.println(this.GetVacancyNumber());
+         System.out.println(this.Getdesignation());
+         System.out.println(this.GetStaffName());
+         System.out.println(this.GetJobType());
+         System.out.println(this.GetJoiningDate());
+         System.out.println(this.GetQualification());
+         System.out.println(this.GetAppointedBy());
+         System.out.println(this.GetJoined());
+>>>>>>> Stashed changes
     
  
 

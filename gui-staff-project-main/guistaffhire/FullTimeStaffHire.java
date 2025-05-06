@@ -23,8 +23,8 @@ public class FullTimeStaffHire extends StaffHire
     String Designation,
     String AppointedBy,
     boolean Joined,
-    double NewSalary,
-    int NewWeeklyFractionalHours
+    int NewWeeklyFractionalHours,
+    double NewSalary
     )
     {
         // initialise instance variables
@@ -40,9 +40,56 @@ public class FullTimeStaffHire extends StaffHire
         
         NewSalary = salary;
         NewWeeklyFractionalHours =WeeklyFractionalHours;
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
     }
     public void setShifts(){
         System.out.println("guhasshahahah");
     
+<<<<<<< Updated upstream
+=======
+    }   
+    public double GetSalary(){
+    
+        return salary;
+    }
+    
+    
+    public void SetSalary(double salary){
+    
+        this.salary = salary;
+        System.out.println("set");
+    
+    }
+    
+    public int GetWeeklyFractionalHours(){
+        
+        return WeeklyFractionalHours;
+    
+    }
+    
+    public void SetWeeklyFractionalHours(int WeeklyFractionalHours){
+        
+        this.WeeklyFractionalHours = WeeklyFractionalHours;
+    
+    }
+    
+    public void display()
+    {
+         System.out.println("burgers and fries");
+         System.out.println(this.GetVacancyNumber());
+         System.out.println(this.Getdesignation());
+         System.out.println(this.GetStaffName());
+         System.out.println(this.GetJobType());
+         System.out.println(this.GetJoiningDate());
+         System.out.println(this.GetQualification());
+         System.out.println(this.GetAppointedBy());
+         System.out.println(this.GetJoined());
+         System.out.println(this.GetWeeklyFractionalHours());
+         System.out.println(this.GetSalary());
+         
+>>>>>>> Stashed changes
     }
 }

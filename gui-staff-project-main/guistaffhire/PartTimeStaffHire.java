@@ -51,9 +51,64 @@ public class PartTimeStaffHire extends StaffHire
         newShifts = shifts;
         newTerminated = terminated;
     }
+<<<<<<< Updated upstream
     public void setShifts(){
         System.out.println("guhahahahah");
     
     }
 
+=======
+    public void SetShifts(String shifts){
+        this.shifts = shifts; 
+    }
+    public String GetShifts(){
+        
+        return shifts;
+    
+    }
+
+    
+    public double GetWagesPerHour(){
+    
+    
+        return wagesPerHour;
+    }
+    
+    public void SetWagesPerHour(double wagesPerHour){
+    
+        this.wagesPerHour = wagesPerHour;
+        
+    }
+    
+    public int GetWorkingHour(){
+    
+        return workingHour;
+    }
+    public void SetWorkingHour(int workingHour){
+    
+        this.workingHour = workingHour;
+    }
+    public boolean GetTerminated(){
+    
+    
+        return terminated; 
+    }
+    
+    public void display()
+    {
+         System.out.println("burgers and fries");
+         System.out.println("vacancy:"+this.GetVacancyNumber());
+         System.out.println("designation:"+this.Getdesignation());
+         System.out.println("staff members name:"+this.GetStaffName());
+         System.out.println("job type"+this.GetJobType());
+         System.out.println("joining date"+this.GetJoiningDate());
+         System.out.println("qualification:"+this.GetQualification());
+         System.out.println("appointed by:"+this.GetAppointedBy());
+         System.out.println("joined state:"+this.GetJoined());
+         System.out.println("working hours:"+this.GetWorkingHour());
+         System.out.println("hourly wage:"+this.GetWagesPerHour());
+         System.out.println("terminated state:"+this.GetTerminated());
+         System.out.println("shifts:"+this.GetShifts());
+    }
+>>>>>>> Stashed changes
 }
