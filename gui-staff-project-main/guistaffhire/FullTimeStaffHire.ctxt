@@ -6,9 +6,6 @@ comment1.target=FullTimeStaffHire(int,\ java.lang.String,\ java.lang.String,\ ja
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ FullTimeStaffHire\r\n
 comment2.params=
 comment2.target=void\ setShifts()
-<<<<<<< Updated upstream
-numComments=3
-=======
 comment3.params=
 comment3.target=double\ GetSalary()
 comment4.params=salary
@@ -20,4 +17,3 @@ comment6.target=void\ SetWeeklyFractionalHours(int)
 comment7.params=
 comment7.target=void\ display()
 numComments=8
->>>>>>> Stashed changes

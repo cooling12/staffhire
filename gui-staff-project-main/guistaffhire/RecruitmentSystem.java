@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class GUI here.
  *
@@ -74,18 +73,13 @@ public class RecruitmentSystem  implements ActionListener
     private JButton terminateBUT;
     
     //additional attributes 
-<<<<<<< Updated upstream
-    public int intifyVancany;
-    public double doubleifySalary;
-    public int intifyWeeklyFractionalHours;
-    public int initifyWorkingHour;
-=======
+
     private int intifyVancany;
     private double doubleifySalary;
     private int intifyWeeklyFractionalHours;
     private int initifyWorkingHour;
->>>>>>> Stashed changes
     public double doubleifyWagesPerHour; 
+    
     private String shifts;
     
     
@@ -352,6 +346,7 @@ public class RecruitmentSystem  implements ActionListener
      partTimeBUT = new JButton("add parttime staff");
      gbc.gridx = 1;
      gbc.gridy = 20;
+     //submitBUT.addActionListener(this);
      partTimeBUT.addActionListener(this);
      site.add(partTimeBUT,gbc);
      
@@ -359,10 +354,12 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
+     site.add(partTimeBUT,gbc);
      
      setWorkingShiftsBUT = new JButton("set working shift");
      gbc.gridx = 1;
      gbc.gridy = 21;
+     partTimeBUT.addActionListener(this);
      setWorkingShiftsBUT.addActionListener(this);
      site.add(setWorkingShiftsBUT,gbc);
      
@@ -394,11 +391,8 @@ public class RecruitmentSystem  implements ActionListener
      displayBUT = new JButton("display number");
      gbc.gridx = 12;
      gbc.gridy = 2;
-<<<<<<< Updated upstream
-     //submitBUT.addActionListener(this);
-=======
+
      displayBUT.addActionListener(this);
->>>>>>> Stashed changes
      site.add(displayBUT,gbc);
      
      
@@ -449,16 +443,12 @@ public class RecruitmentSystem  implements ActionListener
             TFshiftsTXT.setText("");
             terminatedTXT.setSelected(false);
             joinedTXT.setSelected(false);
-<<<<<<< Updated upstream
-=======
-            
-            
-            
-            
-            
->>>>>>> Stashed changes
+
         }
         else if (event.getSource() == fullTimeBUT){
+             intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
+             doubleifySalary = Double.parseDouble(TFsalaryTXT.getText());
+             intifyWeeklyFractionalHours = Integer.parseInt(TFWeeklyFractionalHoursTXT.getText());
              
             try{intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
             }
@@ -501,17 +491,13 @@ public class RecruitmentSystem  implements ActionListener
             intifyWeeklyFractionalHours,
             doubleifySalary
             );   
-<<<<<<< Updated upstream
-            System.out.println(full.GetStaffName());
-            System.out.println(full.Getdesignation());
-            System.out.println("burgers and fries");
-=======
+
             
             
             full.SetSalary(doubleifySalary);
             full.SetWeeklyFractionalHours(intifyWeeklyFractionalHours);
             full.display();
->>>>>>> Stashed changes
+
             
             stafflist.add(full);
             for(int i = 0; i<stafflist.size(); i++){
@@ -520,9 +506,10 @@ public class RecruitmentSystem  implements ActionListener
         }
         
         else if (event.getSource() == partTimeBUT){
+            
              
               
-             try{intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
+            try{intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
             }
             catch(NumberFormatException nfe){
                 System.out.println("wrong move buddy");
@@ -569,6 +556,9 @@ public class RecruitmentSystem  implements ActionListener
             shifts,
             terminatedTXT.isSelected()
             );
+            System.out.println(part.GetStaffName());
+            System.out.println(terminatedTXT.isSelected());
+
             
             
             
@@ -582,9 +572,7 @@ public class RecruitmentSystem  implements ActionListener
              
            
         }
-<<<<<<< Updated upstream
-            
-=======
+
         else if (event.getSource() == displayBUT){
             
             System.out.println(stafflist.get(intifyVancany));
@@ -682,30 +670,30 @@ public class RecruitmentSystem  implements ActionListener
         
        
                 }
->>>>>>> Stashed changes
+
            
         
             }
         
         
         }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-
-<<<<<<< Updated upstream
-
-
-
-
-
-
-
-
-
-
-
-}
     
 
-=======
-}
->>>>>>> Stashed changes
+
+
+

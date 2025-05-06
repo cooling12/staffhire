@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class FullTimeStaffHire here.
  *
@@ -24,9 +23,9 @@ public class FullTimeStaffHire extends StaffHire
     String AppointedBy,
     boolean Joined,
     int NewWeeklyFractionalHours,
-    double NewSalary
-    )
+    double NewSalary)
     {
+    
         // initialise instance variables
         super(
         VacancyNumber,
@@ -40,16 +39,13 @@ public class FullTimeStaffHire extends StaffHire
         
         NewSalary = salary;
         NewWeeklyFractionalHours =WeeklyFractionalHours;
-<<<<<<< Updated upstream
-=======
-        
->>>>>>> Stashed changes
+
+
     }
     public void setShifts(){
         System.out.println("guhasshahahah");
     
-<<<<<<< Updated upstream
-=======
+
     }   
     public double GetSalary(){
     
@@ -89,7 +85,6 @@ public class FullTimeStaffHire extends StaffHire
          System.out.println(this.GetJoined());
          System.out.println(this.GetWeeklyFractionalHours());
          System.out.println(this.GetSalary());
-         
->>>>>>> Stashed changes
+
     }
 }

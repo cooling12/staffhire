@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class PartTimeStaffHire here.
  *
@@ -51,13 +50,13 @@ public class PartTimeStaffHire extends StaffHire
         newShifts = shifts;
         newTerminated = terminated;
     }
-<<<<<<< Updated upstream
+
     public void setShifts(){
         System.out.println("guhahahahah");
     
     }
 
-=======
+
     public void SetShifts(String shifts){
         this.shifts = shifts; 
     }
@@ -110,5 +109,5 @@ public class PartTimeStaffHire extends StaffHire
          System.out.println("terminated state:"+this.GetTerminated());
          System.out.println("shifts:"+this.GetShifts());
     }
->>>>>>> Stashed changes
+
 }
