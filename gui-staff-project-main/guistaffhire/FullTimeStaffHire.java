@@ -1,13 +1,13 @@
 /**
- * Write a description of class FullTimeStaffHire here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * this is the class for the fullTime staff object it allows for the wider program 
+ * to create part time staff objects and manipulate their attributes 
+ * @Abdullah Alnahas
+ * @06/5/2025
  */
 public class FullTimeStaffHire extends StaffHire
 {
     // instance variables - replace the example below with your own
-    private int WeeklyFractionalHours;
+    private int weeklyFractionalHours;
     private double salary;
 
     /**
@@ -26,65 +26,50 @@ public class FullTimeStaffHire extends StaffHire
     double NewSalary)
     {
     
-        // initialise instance variables
+        //inherits the
         super(
         VacancyNumber,
         Designation,
-         StaffName,
-         JobType,
-         JoiningDate,
-         Qualification,
+        StaffName,
+        JobType,
+        JoiningDate,
+        Qualification,
         AppointedBy,
         Joined);
+      
         
         NewSalary = salary;
-        NewWeeklyFractionalHours =WeeklyFractionalHours;
-
-
+        NewWeeklyFractionalHours =weeklyFractionalHours;
     }
-    public void setShifts(){
-        System.out.println("guhasshahahah");
     
-
-    }   
-    public double GetSalary(){
-    
+    //accessor methods 
+    public double getSalary(){
         return salary;
-    }
-    
-    
-    public void SetSalary(double salary){
-    
+    }    
+    public void setSalary(double salary){
         this.salary = salary;
         System.out.println("set");
-    
     }
     
-    public int GetWeeklyFractionalHours(){
-        
-        return WeeklyFractionalHours;
-    
+    public int getWeeklyFractionalHours( ){
+        return weeklyFractionalHours;
+    }
+    public void setWeeklyFractionalHours(int weeklyFractionalHours){
+        this.weeklyFractionalHours =weeklyFractionalHours ;
     }
     
-    public void SetWeeklyFractionalHours(int WeeklyFractionalHours){
-        
-        this.WeeklyFractionalHours = WeeklyFractionalHours;
-    
-    }
-    
+    //override
     public void display()
     {
-         System.out.println("burgers and fries");
-         System.out.println(this.GetVacancyNumber());
-         System.out.println(this.Getdesignation());
-         System.out.println(this.GetStaffName());
-         System.out.println(this.GetJobType());
-         System.out.println(this.GetJoiningDate());
-         System.out.println(this.GetQualification());
-         System.out.println(this.GetAppointedBy());
-         System.out.println(this.GetJoined());
-         System.out.println(this.GetWeeklyFractionalHours());
-         System.out.println(this.GetSalary());
-
+         System.out.println("FullTime staff vacancy:"+this.getVacancyNumber());
+         System.out.println("designation:"+this.getdesignation());
+         System.out.println("staff members name:"+this.getStaffName());
+         System.out.println("job type"+this.getJobType());
+         System.out.println("joining date"+this.getJoiningDate());
+         System.out.println("qualification:"+this.getQualification());
+         System.out.println("appointed by:"+this.getAppointedBy());
+         System.out.println("joined state:"+this.getJoined());
+         System.out.println("weekly fractional hours:"+this.getWeeklyFractionalHours());
+         System.out.println("salary:"+this.getSalary());
     }
 }

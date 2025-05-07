@@ -1,8 +1,8 @@
 /**
- * Write a description of class PartTimeStaffHire here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * this is the class for the part time staff object it allows for the wider program 
+ * to create part time staff objects and manipulate their attributes 
+ * @Abdullah Alnhahas
+ * @05/5/2025
  */
 public class PartTimeStaffHire extends StaffHire
 {
@@ -33,7 +33,7 @@ public class PartTimeStaffHire extends StaffHire
     )
     {
         
-        // initialise instance variables
+        // inherits the initalised paramaters from Staffhire
         super(
         VacancyNumber,
         Designation,
@@ -51,63 +51,50 @@ public class PartTimeStaffHire extends StaffHire
         newTerminated = terminated;
     }
 
-    public void setShifts(){
-        System.out.println("guhahahahah");
-    
-    }
-
-
-    public void SetShifts(String shifts){
+    //accessor methods
+    public void setShifts(String shifts){
         this.shifts = shifts; 
     }
-    public String GetShifts(){
-        
+    public String getShifts(){
         return shifts;
-    
     }
 
-    
-    public double GetWagesPerHour(){
-    
-    
+    public double getWagesPerHour(){
         return wagesPerHour;
     }
-    
-    public void SetWagesPerHour(double wagesPerHour){
-    
+    public void setWagesPerHour(double wagesPerHour){
         this.wagesPerHour = wagesPerHour;
-        
     }
     
-    public int GetWorkingHour(){
-    
+    public int getWorkingHour(){
         return workingHour;
     }
-    public void SetWorkingHour(int workingHour){
-    
+    public void setWorkingHour(int workingHour){
         this.workingHour = workingHour;
     }
-    public boolean GetTerminated(){
     
-    
+    public boolean getTerminated(){    
         return terminated; 
     }
+    public void setTerminated(boolean terminated){
+        this.terminated = terminated;
+    }
     
+    //override
     public void display()
     {
-         System.out.println("burgers and fries");
-         System.out.println("vacancy:"+this.GetVacancyNumber());
-         System.out.println("designation:"+this.Getdesignation());
-         System.out.println("staff members name:"+this.GetStaffName());
-         System.out.println("job type"+this.GetJobType());
-         System.out.println("joining date"+this.GetJoiningDate());
-         System.out.println("qualification:"+this.GetQualification());
-         System.out.println("appointed by:"+this.GetAppointedBy());
-         System.out.println("joined state:"+this.GetJoined());
-         System.out.println("working hours:"+this.GetWorkingHour());
-         System.out.println("hourly wage:"+this.GetWagesPerHour());
-         System.out.println("terminated state:"+this.GetTerminated());
-         System.out.println("shifts:"+this.GetShifts());
+        //gets the data to be displayed and prints it with an appropiate message  
+        System.out.println(" PartTime staff vacancy:"+this.getVacancyNumber());
+         System.out.println("designation:"+this.getdesignation());
+         System.out.println("staff members name:"+this.getStaffName());
+         System.out.println("job type"+this.getJobType());
+         System.out.println("joining date: "+this.getJoiningDate());
+         System.out.println("qualification:"+this.getQualification());
+         System.out.println("appointed by:"+this.getAppointedBy());
+         System.out.println("joined state:"+this.getJoined());
+         System.out.println("working hours:"+this.getWorkingHour());
+         System.out.println("hourly wage:"+this.getWagesPerHour());
+         System.out.println("terminated state:"+this.getTerminated());
+         System.out.println("shifts:"+this.getShifts());
     }
-
 }

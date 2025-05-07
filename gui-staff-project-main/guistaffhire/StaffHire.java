@@ -1,14 +1,17 @@
 
 /**
- * Write a description of class StaffHire here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * the StaffHire class acts as a super class to the two staff subclasses
+ * allowing them both to share the attributes/methods of staffhire through inheritance 
+ * and for them to be stored together in one list using polymorphism
+ * @Abdullah Alnahas
+ * @06/5/2025
  */
 public class StaffHire
 {
-    // instance variables - replace the example below with your own
-    
+    /** 
+    * instance variables they are encapsulated which allows their subclasses to access them easily but wont let 
+    * other classes access them 
+    */
     protected int VacancyNumber;
     protected String Designation;
     protected String StaffName;
@@ -19,9 +22,8 @@ public class StaffHire
     protected boolean Joined;
 
 
-    /**
-     * Constructor for objects of class StaffHire
-     */
+    
+    // Constructor for objects of class StaffHire
     public StaffHire(
      int newVacancyNumber,
      String newDesignation,
@@ -47,62 +49,51 @@ public class StaffHire
     
     }
     
-    public void SetJobType(){
-        
-    }
-    public String GetJobType(){
+    //accessor methods stored here 
+    public void setJobType(){}
+    public String getJobType(){
         return JobType;
     }
-    public void Setjoined(){
-        
-    }
     
-    public boolean GetJoined(){
+    public void setjoined(){}
+    public boolean getJoined(){
         return Joined;
     }
-    public void SetJoiningDate(){
-        
-    }
-    public String GetJoiningDate(){
+    
+    public void setJoiningDate(){}
+    public String getJoiningDate(){
         return JoiningDate;
     }
-    public void SetStaffName(String StaffName){
+    
+    public void setStaffName(String StaffName){
         this.StaffName = StaffName;
     }
-    public String GetStaffName(){
-    
+    public String getStaffName(){
         return StaffName;
     }
-    public void Setdesignation(){
-        
-    }
-    public String Getdesignation(){
+    
+    public void setdesignation(){}
+    public String getdesignation(){
         return Designation;
     }
-    public void SetVacancyNumber(){
-        
-    }
-    public int GetVacancyNumber(){
-        
+    
+    public void setVacancyNumber(){}
+    public int getVacancyNumber(){
         return VacancyNumber;
     }
     
-    public void SetQualification(){
-  
-    }
-    
-    public String GetQualification(){
+    public void setQualification(){}
+    public String getQualification(){
       return Qualification;
     }
     
-    public void SetAppointedBy(){
-    
-    }
-    public String GetAppointedBy(){
+    public void setAppointedBy(){}
+    public String getAppointedBy(){
         return AppointedBy;
     }
     
 
+    //this display is overrided elsewhere in the program 
     public void display(
      int newVacancyNumber,
      String newDesignation,
@@ -113,14 +104,14 @@ public class StaffHire
      String newAppointedBy,
      boolean newJoined)
     {
-         System.out.println(this.GetVacancyNumber());
-         System.out.println(this.Getdesignation());
-         System.out.println(this.GetStaffName());
-         System.out.println(this.GetJobType());
-         System.out.println(this.GetJoiningDate());
-         System.out.println(this.GetQualification());
-         System.out.println(this.GetAppointedBy());
-         System.out.println(this.GetJoined());
+         System.out.println(this.getVacancyNumber());
+         System.out.println(this.getdesignation());
+         System.out.println(this.getStaffName());
+         System.out.println(this.getJobType());
+         System.out.println(this.getJoiningDate());
+         System.out.println(this.getQualification());
+         System.out.println(this.getAppointedBy());
+         System.out.println(this.getJoined());
         }
     
  

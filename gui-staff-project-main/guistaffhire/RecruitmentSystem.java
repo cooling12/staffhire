@@ -1,6 +1,5 @@
 /**
- * Write a description of class GUI here.
- *
+ * this makes the gui,handles the inputs/outputs and stores the database of staff 
  * @author (your name)
  * @version (a version number or a date)
  */
@@ -63,7 +62,6 @@ public class RecruitmentSystem  implements ActionListener
     
     
     // stores the attributes for the buttons 
-    private JButton submitBUT;
     private JButton fullTimeBUT;
     private JButton partTimeBUT;
     private JButton displayBUT;
@@ -76,14 +74,14 @@ public class RecruitmentSystem  implements ActionListener
 
     private int intifyVancany;
     private double doubleifySalary;
-    private int intifyWeeklyFractionalHours;
+    public int intifyWeeklyFractionalHours;
     private int initifyWorkingHour;
-    public double doubleifyWagesPerHour; 
-    
+    private double doubleifyWagesPerHour; 
     private String shifts;
     
-    
+    // the list the staff are stored in 
     public ArrayList<StaffHire> stafflist = new ArrayList();
+    private JLabel staffSizeLBL;
     
     
 
@@ -92,7 +90,6 @@ public class RecruitmentSystem  implements ActionListener
      */
     public RecruitmentSystem()
     {
-        // initialise instance variables
         makeFrame();
     }
     
@@ -111,7 +108,10 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
-     //lables and textfields go here 
+     
+     /**
+     * this section handles staffhire inputs 
+     */
      vacancyNumberLBL = new JLabel("vacancy");
      vacancyNumberLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
@@ -122,9 +122,6 @@ public class RecruitmentSystem  implements ActionListener
      gbc.gridx =1;
      gbc.gridy = 0;
      contentPane.add(TFvacancyNumberTXT, gbc);
-     
-     
-     
      
      StaffNameLBL = new JLabel("name");
      StaffNameLBL.setForeground(new Color(255,255,255));
@@ -137,10 +134,7 @@ public class RecruitmentSystem  implements ActionListener
      gbc.gridx =1;
      gbc.gridy =2;
      contentPane.add(TFstaffNameTXT, gbc);
-     
-     
-     
-     
+    
      jobTypeLBL = new JLabel("job type");
      jobTypeLBL.setForeground(new Color(255,255,255));
      gbc.gridx = 0;
@@ -211,11 +205,8 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
-     
-     
-     
 
-     
+     //checkbox
      joinedTXT = new JCheckBox();
      joinedTXT.setText("joined");
      joinedTXT.setHorizontalTextPosition(SwingConstants.LEFT);
@@ -272,7 +263,7 @@ public class RecruitmentSystem  implements ActionListener
      
           
      
-     fullTimeBUT = new JButton("add fulltime staff");
+     fullTimeBUT = new JButton("add full-time staff");
      gbc.gridx = 1;
      gbc.gridy = 14;
      fullTimeBUT.addActionListener(this);
@@ -335,7 +326,7 @@ public class RecruitmentSystem  implements ActionListener
      
      
      terminatedTXT = new JCheckBox();
-     terminatedTXT.setText("terminated");
+     terminatedTXT.setText("terminate");
      terminatedTXT.setHorizontalTextPosition(SwingConstants.LEFT);
      gbc.gridx = 1;
      gbc.gridy = 19;
@@ -343,23 +334,16 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
-     partTimeBUT = new JButton("add parttime staff");
+     partTimeBUT = new JButton("add part-time staff");
      gbc.gridx = 1;
      gbc.gridy = 20;
-     //submitBUT.addActionListener(this);
      partTimeBUT.addActionListener(this);
      site.add(partTimeBUT,gbc);
      
 
-     
-     
-     
-     site.add(partTimeBUT,gbc);
-     
      setWorkingShiftsBUT = new JButton("set working shift");
      gbc.gridx = 1;
      gbc.gridy = 21;
-     partTimeBUT.addActionListener(this);
      setWorkingShiftsBUT.addActionListener(this);
      site.add(setWorkingShiftsBUT,gbc);
      
@@ -374,15 +358,6 @@ public class RecruitmentSystem  implements ActionListener
      
      
      
-
-     
-     
-     
-     
-     
-     
-     
-     
      
      
      /**
@@ -391,7 +366,6 @@ public class RecruitmentSystem  implements ActionListener
      displayBUT = new JButton("display number");
      gbc.gridx = 12;
      gbc.gridy = 2;
-
      displayBUT.addActionListener(this);
      site.add(displayBUT,gbc);
      
@@ -403,12 +377,15 @@ public class RecruitmentSystem  implements ActionListener
      site.add(clearBUT,gbc);
      
      
+     staffSizeLBL = new JLabel("list of staff: "+"empty");
+     staffSizeLBL.setForeground(new Color(255,255,255));
+     gbc.gridx = 12;
+     gbc.gridy = 4;
+     site.add(staffSizeLBL,gbc);
      
      
-     
-     
+     //creates the frame 
      site.pack(); 
-     
      site.setLayout(new BorderLayout());
      site.add(employmentPanel,BorderLayout.WEST);
      site.setSize(600,710);
@@ -416,7 +393,6 @@ public class RecruitmentSystem  implements ActionListener
     }
     public static void main(String[]args){
         RecruitmentSystem recruitmentSystem = new RecruitmentSystem();
-        System.out.println("wooo were in main baby");
 
         
         
@@ -446,37 +422,36 @@ public class RecruitmentSystem  implements ActionListener
 
         }
         else if (event.getSource() == fullTimeBUT){
-             intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
-             doubleifySalary = Double.parseDouble(TFsalaryTXT.getText());
-             intifyWeeklyFractionalHours = Integer.parseInt(TFWeeklyFractionalHoursTXT.getText());
-             
+    
             try{intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
             }
             catch(NumberFormatException nfe){
-                System.out.println("wrong move buddy");
+                System.out.println("invalid vacancy number input a Arabic numeral 1,2,3 ecetra");
                 TFvacancyNumberTXT.setText("");
             }    
             try{doubleifySalary = Double.parseDouble(TFsalaryTXT.getText());
             }
             catch(NumberFormatException nfe){
-                System.out.println("wrong move buddy");
+                System.out.println("invalid salary input please input a Arabic numeral within two decimal places");
+                System.out.println("2.45 for example");
                 TFsalaryTXT.setText("");
             }    
             
             try{intifyWeeklyFractionalHours = Integer.parseInt(TFWeeklyFractionalHoursTXT.getText());
             }
             catch(NumberFormatException nfe){
-                System.out.println("wrong move buddy");
+                System.out.println("wrong input please only input a whole number ");
                 TFWeeklyFractionalHoursTXT.setText("");
             }    
             
             
             
             
-            
+            //converting  the inputs into paramater friendly datatypes
             intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
             doubleifySalary = Double.parseDouble(TFsalaryTXT.getText());
             intifyWeeklyFractionalHours = Integer.parseInt(TFWeeklyFractionalHoursTXT.getText());
+            System.out.println("aaaaaaaah"+intifyWeeklyFractionalHours);
              
              FullTimeStaffHire   full = new FullTimeStaffHire(
             
@@ -494,49 +469,40 @@ public class RecruitmentSystem  implements ActionListener
 
             
             
-            full.SetSalary(doubleifySalary);
-            full.SetWeeklyFractionalHours(intifyWeeklyFractionalHours);
+            full.setWeeklyFractionalHours(intifyWeeklyFractionalHours);
             full.display();
-
-            
             stafflist.add(full);
-            for(int i = 0; i<stafflist.size(); i++){
-                System.out.println(stafflist.get(i).toString());
-            }
+             for(int i = 0; i<stafflist.size(); i++){
+                    System.out.println(stafflist.get(i).toString());
+
+                    staffSizeLBL.setText("list of staff:"+Integer.toString(stafflist.size()));
+                    staffSizeLBL.getText();
+            } 
         }
         
         else if (event.getSource() == partTimeBUT){
-            
-             
               
             try{intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());
             }
             catch(NumberFormatException nfe){
-                System.out.println("wrong move buddy");
-            }    
-            finally{
+                System.out.println("invalid vacancy number input a Arabic numeral 1,2,3 ecetra");
                 TFvacancyNumberTXT.setText("");
-            }
-            
+            }    
             try{initifyWorkingHour = Integer.parseInt(TFworkingHourTXT.getText());
             }
             catch(NumberFormatException nfe){
-                System.out.println("wrong move buddy");
-            }    
-            finally{
+                System.out.println("wrong input please only input a whole number ");
                 TFworkingHourTXT.setText("");
-            }
-            
+            }   
             try{doubleifyWagesPerHour = Double.parseDouble(TFwagesPerHourTXT.getText());
             }
             catch(NumberFormatException nfe){
-                System.out.println("wrong move buddy");
+                System.out.println("invalid wage input please input a Arabic numeral within two decimal places");
+                System.out.println("2.45 for example");
+                TFworkingHourTXT.setText("");
             }    
-            finally{
-                TFvacancyNumberTXT.setText("");
-            }
             
-            shifts = TFshiftsTXT.getText();
+            // converts the inputs into paramater friendly datatypes
             doubleifyWagesPerHour = Double.parseDouble(TFwagesPerHourTXT.getText());
             intifyVancany = Integer.parseInt(TFvacancyNumberTXT.getText());             
             initifyWorkingHour = Integer.parseInt(TFworkingHourTXT.getText()); 
@@ -553,24 +519,26 @@ public class RecruitmentSystem  implements ActionListener
             joinedTXT.isSelected(),
             initifyWorkingHour,
             doubleifyWagesPerHour,
-            shifts,
+            TFshiftsTXT.getText(),
             terminatedTXT.isSelected()
             );
-            System.out.println(part.GetStaffName());
-            System.out.println(terminatedTXT.isSelected());
 
             
             
             
-            part.SetWorkingHour(initifyWorkingHour);
-            part.SetShifts(TFshiftsTXT.getText());
-            part.SetWagesPerHour(doubleifyWagesPerHour);
+            part.setWorkingHour(initifyWorkingHour);
+            part.setShifts(TFshiftsTXT.getText());
+            part.setTerminated(terminatedTXT.isSelected());
+            part.setWagesPerHour(doubleifyWagesPerHour);
+            part.display();
             stafflist.add(part);
+            
             for(int i = 0; i<stafflist.size(); i++){
-                System.out.println(stafflist.get(i).toString());
-            }
-             
-           
+                    System.out.println(stafflist.get(i).toString());
+
+                    staffSizeLBL.setText("list of staff:"+Integer.toString(stafflist.size()));
+                    staffSizeLBL.getText();
+            }        
         }
 
         else if (event.getSource() == displayBUT){
@@ -606,13 +574,13 @@ public class RecruitmentSystem  implements ActionListener
                 if(intifyVancany == i){
                     StaffHire figure = stafflist.get(i);
                     doubleifySalary = Double.parseDouble(TFsalaryTXT.getText());
-                    boolean joined =  figure. GetJoined();
+                    boolean joined =  figure.getJoined();
                     System.out.println(joined);
-                    // Check if the object is a FullTimeStaffHire and cast if it is
+                
                  if   (figure instanceof FullTimeStaffHire && joined == true) {
-                        ((FullTimeStaffHire) figure).SetSalary(doubleifySalary);
+                        ((FullTimeStaffHire) figure).setSalary(doubleifySalary);
                     }
-                    // Check if the object is a PartTimeStaffHire and cast if it is
+                    
                  else if (figure instanceof PartTimeStaffHire) {
                         System.out.println("wrong staff member");
             
@@ -643,8 +611,8 @@ public class RecruitmentSystem  implements ActionListener
                     }
                 
                  else if (figure instanceof PartTimeStaffHire) {
-                     ((PartTimeStaffHire) figure).SetShifts(TFshiftsTXT.getText());
-                     System.out.println("setty");
+                     ((PartTimeStaffHire) figure).setShifts(TFshiftsTXT.getText());
+                     System.out.println("working shift set");
                     }
         
        
@@ -663,9 +631,14 @@ public class RecruitmentSystem  implements ActionListener
             for(int i = 0; i < stafflist.size(); i++){
                 if(intifyVancany == i){
                     StaffHire figure = stafflist.get(i);    
-                    stafflist.remove(figure);
-                    System.out.println(stafflist.size());
-             
+                 if   (figure instanceof FullTimeStaffHire) {
+                     System.out.println("wrong staff member");
+                    }
+                
+                 else if (figure instanceof PartTimeStaffHire) {
+                     stafflist.remove(figure);
+                     System.out.println("staff member removed");
+                    }
                  
         
        
